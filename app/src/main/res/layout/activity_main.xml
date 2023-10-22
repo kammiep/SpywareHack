@@ -3,38 +3,62 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <com.google.android.material.imageview.ShapeableImageView
+        android:layout_width="match_parent"
+        android:layout_height="50sp"
+        android:background="@color/purple" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:text="Spyware detection app"
-        android:textSize="30sp"
-        android:layout_marginTop="270sp" />
+        android:text="Spyware Detection"
+        android:textSize="35sp"
+        android:layout_marginTop="200sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="250sp"
+        android:text="App"
+        android:textSize="35sp" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="350sp"
+        android:layout_marginTop="360sp"
         android:id="@+id/function"
         android:text="Is my camera being used"
+        android:textSize="20sp"
         android:background="@color/purple"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="420sp"
+        android:layout_marginTop="440sp"
         android:id="@+id/ports"
         android:text="Check ports"
+        android:textSize="20sp"
         android:background="@color/purple"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="490sp"
+        android:layout_marginTop="520sp"
         android:id="@+id/info"
-        android:text="About this app & spyware"
+        android:text="About this app &amp; spyware"
+        android:textSize="20sp"
         android:background="@color/purple"/>
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/shapeableImageView"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="50sp"
+        android:background="@color/purple" />
+
 </RelativeLayout>
