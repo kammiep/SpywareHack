@@ -13,9 +13,49 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text = "@string/about"
+        android:text = "@string/avoid"
         android:textSize="15sp"
         android:layout_marginTop="40sp"
         android:layout_marginLeft="20sp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Signs you may have spyware:"
+        android:textSize="20sp"
+        android:layout_marginTop="100sp"
+        android:layout_marginLeft="10sp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text = "@string/signs"
+        android:textSize="15sp"
+        android:layout_marginTop="130sp"
+        android:layout_marginLeft="20sp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Programs to look out for:"
+        android:textSize="20sp"
+        android:layout_marginTop="240sp"
+        android:layout_marginLeft="10sp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text = "@string/progs"
+        android:textSize="15sp"
+        android:layout_marginTop="270sp"
+        android:layout_marginLeft="20sp"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="500sp"
+        android:onClick="back"/>
 
 </RelativeLayout>

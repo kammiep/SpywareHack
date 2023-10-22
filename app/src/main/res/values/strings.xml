@@ -1,8 +1,10 @@
 <resources>
     <string name="app_name">Technica2023</string>
-    <string name="about">\u2022 Update your device and apps\n\u2022 Use two-factor authentication\n\u2022 Check if apps are
+    <string name="avoid">\u2022 Update your device and apps\n\u2022 Use two-factor authentication\n\u2022 Check if apps are
         from official Play Store or App Store</string>
-    <string name="test">\u2022 Strange accounts are logged into your apps/sites\n\u2022 Apps are
+    <string name="signs">\u2022 Strange accounts are logged into your apps/sites\n\u2022 Apps are
         using your location, microphone, or camera at inappropriate times\n\u2022 Phone is behaving
-        sluggishly\n\u2022 Unexpected advertising or pop-ups</string>
+        sluggishly\n\u2022 Unexpected advertising or pop-ups\n\u2022 Difficulty logging into secure
+        sites</string>
+    <string name="progs">\u2022 Cydia\n\u2022 GO Keyboard\n\u2022 Hermit\n\u2022 Pegasus</string>
 </resources>

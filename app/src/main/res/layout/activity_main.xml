@@ -50,7 +50,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="520sp"
         android:id="@+id/info"
-        android:text="About this app &amp; spyware"
+        android:text="More information"
         android:textSize="20sp"
         android:background="@color/purple"
         android:onClick="aboutPage"/>

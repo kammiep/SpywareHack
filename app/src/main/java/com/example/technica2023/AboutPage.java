@@ -1,6 +1,7 @@
 package com.example.technica2023;
 
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,5 +12,8 @@ public class AboutPage extends AppCompatActivity {
         setContentView(R.layout.about_page);
     }
 
+    void back(View v){
+        finish();
+    }
 
 }
