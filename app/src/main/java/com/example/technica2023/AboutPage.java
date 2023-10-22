@@ -12,7 +12,7 @@ public class AboutPage extends AppCompatActivity {
         setContentView(R.layout.about_page);
     }
 
-    void back(View v){
+    public void back(View v){
         finish();
     }
 

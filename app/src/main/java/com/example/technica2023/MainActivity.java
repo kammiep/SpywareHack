@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    void aboutPage(View v){
+    public void aboutPage(View v){
         Intent myIntent = new Intent(this,AboutPage.class);
         this.startActivity(myIntent);
     }
