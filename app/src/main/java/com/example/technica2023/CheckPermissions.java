@@ -47,6 +47,8 @@ public class CheckPermissions extends AppCompatActivity{
                     }
                 }
                 appNameAndPermissions.append("\n");
+                appNameAndPermissions.append("-------------\n\nDescription:\n");
+                appNameAndPermissions.append(getDescription(applicationInfo.packageName));
             } catch (PackageManager.NameNotFoundException e) {
                 e.printStackTrace();
             }

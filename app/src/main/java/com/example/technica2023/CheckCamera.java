@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
+import android.hardware.camera2.CameraAccessException;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -24,6 +25,10 @@ public class CheckCamera extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.check_camera);
+
+        if (cameraAvailable()) {
+
+        }
     }
 
     public void listApps() {
@@ -79,6 +84,14 @@ public class CheckCamera extends AppCompatActivity {
                 }
             }, new Handler(Looper.myLooper()));
         }
+        try {
+            String[] ids = manager.getCameraIdList();
+            for (String i : ids) {
+            }
+        } catch(Exception e) { // CameraAccessException.CAMERA_IN_USE
+            return false;
+        }
         return true;
+
     }
 }
