@@ -18,6 +18,7 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Dictionary;
 import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.List;
 
 public class CheckPermissions extends AppCompatActivity{
@@ -148,6 +149,19 @@ public class CheckPermissions extends AppCompatActivity{
         CharSequence desc = appInfo.loadDescription(pm);
 
         return desc;
+    }
+
+    public void makeGraph(ArrayList<Integer> perms){
+        String histogram = "";
+        for(int i : perms){
+            histogram += "" + i + " ";
+            for(int j = i; j > 0; j--){
+                histogram += "*";
+            }
+            histogram += "\n";
+        }
+        TextView tv = findViewById(R.id.hist);
+        tv.setText(histogram);
     }
 
 }

@@ -40,4 +40,9 @@ public class MainActivity extends AppCompatActivity {
         this.startActivity(myIntent);
     }
 
+    public void go_ports(View v){
+        Intent myIntent = new Intent(this,Ports.class);
+        this.startActivity(myIntent);
+    }
+
 }

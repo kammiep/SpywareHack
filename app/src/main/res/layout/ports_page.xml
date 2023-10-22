@@ -3,32 +3,34 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="Scan ports"
         android:layout_centerHorizontal="true"
-        android:id="@+id/camera"
-        />
+        android:onClick="scan"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="70sp"
-        android:text="List of activities currently running: " />
-
+        android:text="Open ports (will close):"
+        android:textSize="20sp"
+        android:layout_marginLeft="10sp"
+        android:layout_marginTop="50sp"/>
     <TextView
-        android:id="@+id/list"
-        android:layout_marginTop="100sp"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ports_tv"
+        android:textSize="20sp"
+        android:layout_marginLeft="10sp"
+        android:layout_marginTop="80sp"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Back"
         android:layout_centerHorizontal="true"
-        android:layout_alignParentBottom="true"
-        android:onClick="back"/>
+        android:layout_marginTop="600sp"
+        android:onClick="backtomain"/>
 
 </RelativeLayout>

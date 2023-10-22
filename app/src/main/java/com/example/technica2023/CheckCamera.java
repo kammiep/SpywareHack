@@ -5,10 +5,12 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.hardware.camera2.CameraAccessException;
+import android.hardware.camera2.CameraDevice;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.hardware.camera2.CameraManager;
@@ -26,9 +28,16 @@ public class CheckCamera extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.check_camera);
 
+        TextView cameraStatus = findViewById(R.id.camera);
         if (cameraAvailable()) {
-
+            cameraStatus.setText("Your camera is not being used by another app!");
+        } else {
+            cameraStatus.setText("Your camera is currently being used by another app.\n" +
+                    "Check the list of apps below to figure out which app might be using " +
+                    "your camera.");
         }
+
+        listApps();
     }
 
     public void listApps() {
@@ -40,21 +49,30 @@ public class CheckCamera extends AppCompatActivity {
         List<ResolveInfo> list = pm.queryIntentActivities(intent, PackageManager.PERMISSION_GRANTED);
         ArrayList<String> stringList = new ArrayList<>();
         for (ResolveInfo r : list) {
-            System.out.println("List of Installed Applications:" + r.activityInfo.applicationInfo.loadLabel(pm).toString());
+            Log.w("Apps", "List of Installed Applications:" + r.activityInfo.applicationInfo.loadLabel(pm).toString());
             stringList.add(r.activityInfo.applicationInfo.loadLabel(pm).toString());
         }
-
-        String[] arrayList = (String[]) list.toArray();
-        ListView l = findViewById(R.id.list);
+        TextView t = findViewById(R.id.list);
+        String result = "";
+        for (String i : stringList) {
+            result += i + "\n\n";
+        }
+        t.setText(result);
+        /*
+        String[] arrayList = new String[stringList.size()];
+        for (int i = 0; i < stringList.size(); i++) {
+            arrayList[i] = stringList.get(i);
+        }
+        //ListView l = findViewById(R.id.list);
         ArrayAdapter<String> arr;
         arr
                 = new ArrayAdapter<String>(
                 this,
                 R.layout.check_camera,
+                R.id.list,
                 arrayList);
-        l.setAdapter(arr);
-
-
+        //l.setAdapter(arr);
+         */
     }
 
 
@@ -67,7 +85,6 @@ public class CheckCamera extends AppCompatActivity {
                 @Override
                 public void onCameraAvailable(String cameraId) {
                     super.onCameraAvailable(cameraId);
-                    cameraStatus.setText("Your camera is not being used by another app!");
                     // code here?
 
                 }
@@ -75,10 +92,6 @@ public class CheckCamera extends AppCompatActivity {
                 @Override
                 public void onCameraUnavailable(String cameraId) {
                     super.onCameraUnavailable(cameraId);
-                    cameraStatus.setText("Your camera is currently being used by another app.\n" +
-                            "Check the list of apps below to figure out which app might be using " +
-                            "your camera.");
-
                     //
 
                 }
@@ -87,12 +100,14 @@ public class CheckCamera extends AppCompatActivity {
 
         try {
             String[] ids = manager.getCameraIdList();
-            for (String i : ids) {
+            if (ids.length == 0) {
+                return true;
+            } else {
+                return false;
             }
         } catch(Exception e) { // CameraAccessException.CAMERA_IN_USE
-            return false;
+            Log.w("Error", "Threw an exception with " + e.getLocalizedMessage());
         }
-        return true;
-
+        return false;
     }
 }

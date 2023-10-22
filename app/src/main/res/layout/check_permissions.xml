@@ -23,8 +23,23 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="670sp"
+
+        android:text="Back"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:onClick="back"
-        android:text="Back" />
+        android:layout_marginTop="500sp"
+        android:onClick="back"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="500sp"
+        android:layout_marginLeft="20sp"
+        android:text="Histogram: "/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/hist"
+        android:layout_marginTop="520sp"
+        android:layout_marginLeft="20sp" />
 </RelativeLayout>
