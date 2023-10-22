@@ -8,8 +8,8 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:text="Spyware detection app"
-        android:textSize="20sp"
-        android:layout_marginTop="270sp"/>
+        android:textSize="30sp"
+        android:layout_marginTop="270sp" />
 
     <Button
         android:layout_width="wrap_content"
@@ -17,13 +17,24 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="350sp"
         android:id="@+id/function"
-        android:text="TODO"/>
+        android:text="Is my camera being used"
+        android:background="@color/purple"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="400sp"
+        android:layout_marginTop="420sp"
+        android:id="@+id/ports"
+        android:text="Check ports"
+        android:background="@color/purple"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="490sp"
         android:id="@+id/info"
-        android:text="About this app & spyware"/>
+        android:text="About this app & spyware"
+        android:background="@color/purple"/>
 </RelativeLayout>
