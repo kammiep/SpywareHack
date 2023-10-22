@@ -21,7 +21,7 @@ public class Ports extends AppCompatActivity {
     }
 
     public void scan(View v) throws UnknownHostException {
-        String open_ports = "";
+        String open_ports = "test";
         InetAddress localhost = InetAddress.getByName("127.0.0.1");
         int common_ports[] = {7,20,21,22,23,25,53,69,80,88,135,139,443,464,465,587,636,3724};
         for(int i : common_ports){
