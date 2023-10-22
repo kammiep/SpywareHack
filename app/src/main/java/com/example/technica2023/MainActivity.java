@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public void aboutPage(View v){
+    public void aboutPage(View v) {
         Intent myIntent = new Intent(this,AboutPage.class);
         this.startActivity(myIntent);
     }
@@ -31,39 +31,9 @@ public class MainActivity extends AppCompatActivity {
         this.startActivity(myIntent);
     }
 
-    public StringBuffer getPermissions() {
-        StringBuffer appNameAndPermissions = new StringBuffer();
-        PackageManager pm = getPackageManager();
-        List<ApplicationInfo> packages = pm.getInstalledApplications(PackageManager.GET_META_DATA);
-
-        for (ApplicationInfo applicationInfo : packages) {
-            Log.d("test", "App: " + applicationInfo.name + " Package: " + applicationInfo.packageName);
-            try {
-                PackageInfo packageInfo = pm.getPackageInfo(applicationInfo.packageName, PackageManager.GET_PERMISSIONS);
-                appNameAndPermissions.append(packageInfo.packageName + "*******:\n");
-
-                //Get Permissions
-                String[] requestedPermissions = packageInfo.requestedPermissions;
-                if (requestedPermissions != null) {
-                    for (int i = 0; i < requestedPermissions.length; i++) {
-                        Log.d("test", requestedPermissions[i]);
-                        appNameAndPermissions.append(requestedPermissions[i] + "\n");
-                    }
-                }
-                appNameAndPermissions.append("\n");
-            } catch (NameNotFoundException e) {
-                e.printStackTrace();
-            }
-        }
-        return appNameAndPermissions;
+    public void checkPermissions(View v) {
+        Intent myIntent = new Intent(this, CheckPermissions.class);
+        this.startActivity(myIntent);
     }
 
-
-    public CharSequence getDescription(String packageName) throws NameNotFoundException {
-        PackageManager pm = getPackageManager();
-        ApplicationInfo appInfo = pm.getApplicationInfo(packageName, 0);
-        CharSequence desc = appInfo.loadDescription(pm);
-
-        return desc;
-    }
 }

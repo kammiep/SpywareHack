@@ -6,27 +6,22 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/camera"
-        />
+        android:text="List of app permissions: "
+        android:textSize="20sp"
+        android:layout_margin="10sp"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:text="List of activities currently running: " />
-
-    <ListView
-        android:id="@+id/list"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:id="@+id/permissions"
+        android:textSize="20sp"
+        android:layout_margin="10sp"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Back"
         android:layout_centerHorizontal="true"
-        android:layout_alignParentBottom="true"
+        android:layout_marginTop="500sp"
         android:onClick="back"/>
-
 </RelativeLayout>
