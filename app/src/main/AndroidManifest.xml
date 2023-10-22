@@ -35,6 +35,10 @@
             android:name=".CheckPermissions">
         </activity>
 
+        <activity
+            android:name=".Ports">
+        </activity>
+
     </application>
 
 </manifest>

@@ -43,7 +43,8 @@
         android:id="@+id/ports"
         android:text="Check ports"
         android:textSize="20sp"
-        android:background="@color/purple"/>
+        android:background="@color/purple"
+        android:onClick="go_ports"/>
 
     <Button
         android:layout_width="wrap_content"
