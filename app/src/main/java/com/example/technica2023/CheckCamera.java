@@ -53,7 +53,10 @@ public class CheckCamera extends AppCompatActivity {
             stringList.add(r.activityInfo.applicationInfo.loadLabel(pm).toString());
         }
 
-        String[] arrayList = (String[]) stringList.toArray();
+        String[] arrayList = new String[stringList.size()];
+        for (int i = 0; i < stringList.size(); i++) {
+            arrayList[i] = stringList.get(i);
+        }
         ListView l = findViewById(R.id.list);
         ArrayAdapter<String> arr;
         arr
