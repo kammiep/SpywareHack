@@ -18,4 +18,9 @@ public class MainActivity extends AppCompatActivity {
         Intent myIntent = new Intent(this,AboutPage.class);
         this.startActivity(myIntent);
     }
+
+    public void checkCamera(View v) {
+        Intent myIntent = new Intent(this, CheckCamera.class);
+        this.startActivity(myIntent);
+    }
 }

@@ -32,7 +32,8 @@
         android:id="@+id/function"
         android:text="Is my camera being used"
         android:textSize="20sp"
-        android:background="@color/purple"/>
+        android:background="@color/purple"
+        android:onClick="checkCamera"/>
 
     <Button
         android:layout_width="wrap_content"
