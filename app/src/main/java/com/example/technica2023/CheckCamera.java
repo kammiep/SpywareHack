@@ -52,19 +52,27 @@ public class CheckCamera extends AppCompatActivity {
             Log.w("Apps", "List of Installed Applications:" + r.activityInfo.applicationInfo.loadLabel(pm).toString());
             stringList.add(r.activityInfo.applicationInfo.loadLabel(pm).toString());
         }
-
+        TextView t = findViewById(R.id.list);
+        String result = "";
+        for (String i : stringList) {
+            result += i + "\n\n";
+        }
+        t.setText(result);
+        /*
         String[] arrayList = new String[stringList.size()];
         for (int i = 0; i < stringList.size(); i++) {
             arrayList[i] = stringList.get(i);
         }
-        ListView l = findViewById(R.id.list);
+        //ListView l = findViewById(R.id.list);
         ArrayAdapter<String> arr;
         arr
                 = new ArrayAdapter<String>(
                 this,
                 R.layout.check_camera,
+                R.id.list,
                 arrayList);
-        l.setAdapter(arr);
+        //l.setAdapter(arr);
+         */
     }
 
 

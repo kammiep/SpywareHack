@@ -17,7 +17,7 @@
         android:layout_marginTop="70sp"
         android:text="List of activities currently running: " />
 
-    <ListView
+    <TextView
         android:id="@+id/list"
         android:layout_marginTop="100sp"
         android:layout_width="match_parent"
