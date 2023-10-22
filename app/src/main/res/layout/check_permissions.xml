@@ -15,13 +15,16 @@
         android:layout_height="wrap_content"
         android:id="@+id/permissions"
         android:textSize="20sp"
+        android:scrollbars="vertical"
+        android:maxLines = "30"
+
         android:layout_margin="10sp"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Back"
+        android:layout_marginTop="670sp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="500sp"
-        android:onClick="back"/>
+        android:onClick="back"
+        android:text="Back" />
 </RelativeLayout>
