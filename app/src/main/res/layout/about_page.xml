@@ -55,7 +55,7 @@
         android:layout_height="wrap_content"
         android:text="Back"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="500sp"
+        android:layout_alignParentBottom="true"
         android:onClick="back"/>
 
 </RelativeLayout>

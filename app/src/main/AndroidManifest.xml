@@ -31,6 +31,10 @@
             android:name=".CheckCamera">
         </activity>
 
+        <activity
+            android:name=".CheckPermissions">
+        </activity>
+
     </application>
 
 </manifest>

@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
+import android.hardware.camera2.CameraAccessException;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -11,6 +12,7 @@ import android.os.Looper;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.hardware.camera2.CameraManager;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -23,6 +25,10 @@ public class CheckCamera extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.check_camera);
+
+        if (cameraAvailable()) {
+
+        }
     }
 
     public void listApps() {
@@ -57,20 +63,36 @@ public class CheckCamera extends AppCompatActivity {
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             manager.registerAvailabilityCallback(new CameraManager.AvailabilityCallback() {
+                TextView cameraStatus = findViewById(R.id.camera);
                 @Override
                 public void onCameraAvailable(String cameraId) {
                     super.onCameraAvailable(cameraId);
+                    cameraStatus.setText("Your camera is not being used by another app!");
                     // code here?
+
                 }
 
                 @Override
                 public void onCameraUnavailable(String cameraId) {
                     super.onCameraUnavailable(cameraId);
+                    cameraStatus.setText("Your camera is currently being used by another app.\n" +
+                            "Check the list of apps below to figure out which app might be using " +
+                            "your camera.");
+
                     //
 
                 }
             }, new Handler(Looper.myLooper()));
         }
-        return false;
+
+        try {
+            String[] ids = manager.getCameraIdList();
+            for (String i : ids) {
+            }
+        } catch(Exception e) { // CameraAccessException.CAMERA_IN_USE
+            return false;
+        }
+        return true;
+
     }
 }

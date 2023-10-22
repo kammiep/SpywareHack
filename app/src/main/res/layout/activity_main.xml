@@ -30,7 +30,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="360sp"
         android:id="@+id/function"
-        android:text="Is my camera being used"
+        android:text="Check camera"
         android:textSize="20sp"
         android:background="@color/purple"
         android:onClick="checkCamera"/>
@@ -50,6 +50,17 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="520sp"
+        android:id="@+id/permissions"
+        android:text="Check app permissions"
+        android:textSize="20sp"
+        android:background="@color/purple"
+        android:onClick="checkPermissions"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="590sp"
         android:id="@+id/info"
         android:text="More information"
         android:textSize="20sp"
