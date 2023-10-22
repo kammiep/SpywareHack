@@ -71,5 +71,6 @@ public class CheckCamera extends AppCompatActivity {
                 }
             }, new Handler(Looper.myLooper()));
         }
+        return false;
     }
 }
