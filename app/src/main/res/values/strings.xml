@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Technica2023</string>
+    <string name="about">\u2022 Update your device and apps\n\u2022 Use two-factor authentication\n\u2022 Check if apps are
+        from official Play Store or App Store</string>
+    <string name="test">\u2022 Strange accounts are logged into your apps/sites\n\u2022 Apps are
+        using your location, microphone, or camera at inappropriate times\n\u2022 Phone is behaving
+        sluggishly\n\u2022 Unexpected advertising or pop-ups</string>
 </resources>

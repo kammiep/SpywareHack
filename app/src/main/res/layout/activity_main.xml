@@ -52,7 +52,8 @@
         android:id="@+id/info"
         android:text="About this app &amp; spyware"
         android:textSize="20sp"
-        android:background="@color/purple"/>
+        android:background="@color/purple"
+        android:onClick="aboutPage"/>
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/shapeableImageView"
