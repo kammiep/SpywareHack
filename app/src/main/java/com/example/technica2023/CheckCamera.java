@@ -1,11 +1,16 @@
 package com.example.technica2023;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.hardware.camera2.CameraManager;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -44,5 +49,27 @@ public class CheckCamera extends AppCompatActivity {
         l.setAdapter(arr);
 
 
+    }
+
+
+    public boolean cameraAvailable () {
+        CameraManager manager = (CameraManager) getSystemService(Context.CAMERA_SERVICE);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            manager.registerAvailabilityCallback(new CameraManager.AvailabilityCallback() {
+                @Override
+                public void onCameraAvailable(String cameraId) {
+                    super.onCameraAvailable(cameraId);
+                    // code here?
+                }
+
+                @Override
+                public void onCameraUnavailable(String cameraId) {
+                    super.onCameraUnavailable(cameraId);
+                    //
+
+                }
+            }, new Handler(Looper.myLooper()));
+        }
     }
 }
