@@ -35,6 +35,6 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="490sp"
         android:id="@+id/info"
-        android:text="About this app & spyware"
+        android:text="About this app and spyware"
         android:background="@color/purple"/>
 </RelativeLayout>
