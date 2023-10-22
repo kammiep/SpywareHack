@@ -31,6 +31,10 @@ public class MainActivity extends AppCompatActivity {
         this.startActivity(myIntent);
     }
 
+    public void checkPorts(View v) {
+        Intent myIntent = new Intent(this, Ports.class);
+        this.startActivity(myIntent);
+    }
     public void checkPermissions(View v) {
         Intent myIntent = new Intent(this, CheckPermissions.class);
         this.startActivity(myIntent);
